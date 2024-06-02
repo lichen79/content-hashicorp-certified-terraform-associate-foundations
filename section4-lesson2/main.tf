@@ -1,5 +1,16 @@
 # Configure the Docker provider
-provider "docker" {}
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "2.16.0" # specify the desired version
+    }
+  }
+}
+
+provider "docker" {
+  # Configuration options for the Docker provider (if any)
+}
 
 #Image to be used by container
 resource "docker_image" "terraform-centos" {

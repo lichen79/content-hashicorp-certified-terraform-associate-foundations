@@ -15,7 +15,8 @@ module "vpc" {
 
   azs            = ["us-east-1a"]
   public_subnets = ["10.0.1.0/24"]
-
+  # Enable auto-assign public IPv4 address
+  map_public_ip_on_launch = true
 
 }
 
